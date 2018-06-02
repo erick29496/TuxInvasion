@@ -13,9 +13,6 @@ func on_score_changed():
 	print('score changed')
 	get_node('RichTextLabel').set_text('100')
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
 
 

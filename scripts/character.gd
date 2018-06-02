@@ -1,12 +1,11 @@
 extends KinematicBody2D
 
-const GRAVITY_VEC = Vector2(0, 1100)
+const GRAVITY_VEC = Vector2(0, 2500)
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 25.0
 const MIN_ONAIR_TIME = 0.1
-const WALK_SPEED = 300 # pixels/sec
-const JUMP_SPEED = 300
-const MAX_JUMP = 700
+const JUMP_SPEED = 600
+const MAX_JUMP = 1000
 const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 
@@ -17,6 +16,7 @@ var jump = false
 var cont_jump = 0
 
 func _physics_process(delta):
+	
 	# check if on camera
 	var pos = self.position
 	var pos_dif = get_parent().get_parent().get_node('Camera').position - pos
@@ -53,9 +53,12 @@ func _physics_process(delta):
 	else:
 		$Sprite.play()
 
-	target_speed *= WALK_SPEED
+	var walk_speed = 300
+	if (get_parent() != null):
+	 	walk_speed = get_parent().get_parent().get_node('Camera').getSpeed()
+	target_speed *= walk_speed
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
-
+	
 	# Jumping
 	#if on_floor and Input.is_action_just_pressed("jump"):
 	#	linear_vel.y = -JUMP_SPEED
