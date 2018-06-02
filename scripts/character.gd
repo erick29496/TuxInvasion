@@ -17,6 +17,12 @@ var jump = false
 var cont_jump = 0
 
 func _physics_process(delta):
+	# check if on camera
+	var pos = self.position
+	var pos_dif = get_parent().get_parent().get_node('Camera').position - pos
+	if pos_dif.y < -500 or pos_dif.x < -800 or pos_dif.x > 800:
+		get_parent()._removeCharacter(self)
+	
 	#increment counters
 
 	onair_time += delta
