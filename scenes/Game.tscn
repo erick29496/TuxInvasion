@@ -317,7 +317,7 @@ script = ExtResource( 9 )
 
 [node name="Bomb" parent="Bombs" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 813.19, 492.931 )
+position = Vector2( 1112.95, 474.295 )
 scale = Vector2( 2.52793, 2.22885 )
 
 [node name="Bomb2" parent="Bombs" index="1" instance=ExtResource( 10 )]
