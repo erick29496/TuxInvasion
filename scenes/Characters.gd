@@ -1,13 +1,18 @@
 extends Node2D
 
-signal new_character
 var start = false
 var cont = 0
 
 func _ready():
 	_addCharacter()
 	start = true
-	self.connect('new_character', self, '_addCharacter')
+	#get_parent().get_node('Bombs/Bomb').connect('remove_character', self, '_removeCharacter')
+	#get_parent().get_node('Bombs/Bomb2').connect('remove_character', self, '_removeCharacter')
+	#get_parent().get_node('Bombs/Bomb3').connect('remove_character', self, '_removeCharacter')
+	
+	var bombs = get_parent().get_node('Bombs').get_children()
+	for bomb in bombs:
+		bomb.connect('remove_character', self, '_removeCharacter')
 
 func _process(delta):
 	if (cont == 0):
@@ -20,16 +25,17 @@ func _addCharacter():
 	if (start): 
 		var aux = randi()%600-200
 		pos -= Vector2(aux, 70)
-	print(pos)
 	scene_instance.set_name("CharacterX")
 	scene_instance.set_position(pos)
 	add_child(scene_instance)
 	cont += 1;
 	get_parent().get_node('Camera/ZombiesLabel').set_text(str(cont))
-	print("Added new character")
 	
 func _removeCharacter(node):
-	print('Removing character')
 	remove_child(node)
 	cont -= 1
 	get_parent().get_node('Camera/ZombiesLabel').set_text(str(cont))
+	
+func _remove_last_character():
+	var last = get_children()[get_child_count() -1]
+	self._removeCharacter(last)

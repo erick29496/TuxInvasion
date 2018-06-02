@@ -6,14 +6,14 @@
 
 script/source = "extends Area2D
 
-signal new_character
+signal remove_character(character)
 
 func _on_Bomb_body_entered(body):
+	emit_signal('remove_character', body)
 	$Anim.play(\"explote\")
 	$Shape.queue_free()
 	yield(get_node(\"Anim\"), \"animation_finished\")
-	queue_free()
-	emit_signal('new_character')"
+	queue_free()"
 
 [sub_resource type="Animation" id=2]
 
