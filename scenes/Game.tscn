@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/Tileset.tres" type="TileSet" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://scenes/Bomb.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Area2D.gd" type="Script" id=11]
 [ext_resource path="res://assets/hud_heartFull.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1.01218, 485.963 )
 
 [sub_resource type="DynamicFontData" id=2]
 
@@ -50,7 +55,7 @@ use_filter = false
 font_data = SubResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -86,7 +91,6 @@ __meta__ = {
 
 [node name="Parallax" type="ParallaxBackground" parent="." index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -101,7 +105,6 @@ scroll_ignore_camera_zoom = false
 
 [node name="Layer" type="ParallaxLayer" parent="Parallax" index="0"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0.5, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -165,7 +168,7 @@ position = Vector2( 352.086, 500.162 )
 
 [node name="Camera" type="Camera2D" parent="." index="3"]
 
-position = Vector2( 36.1064, 464.306 )
+position = Vector2( 313.617, 451.933 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -191,7 +194,24 @@ editor_draw_drag_margin = false
 script = ExtResource( 7 )
 _sections_unfolded = [ "Limit", "Smoothing", "Transform" ]
 
-[node name="Label" type="Label" parent="Camera" index="0"]
+[node name="Area2D" type="Area2D" parent="Camera" index="0"]
+
+position = Vector2( -777.312, -3.48264 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Collision" type="CollisionShape2D" parent="Camera/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Camera" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -216,7 +236,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Material", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="PointsLabel" type="Label" parent="Camera" index="1"]
+[node name="PointsLabel" type="Label" parent="Camera" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -241,7 +261,7 @@ max_lines_visible = -1
 script = ExtResource( 8 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="Camera" index="2"]
+[node name="Label2" type="Label" parent="Camera" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -265,7 +285,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="ZombiesLabel" type="Label" parent="Camera" index="3"]
+[node name="ZombiesLabel" type="Label" parent="Camera" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -295,8 +315,6 @@ script = ExtResource( 9 )
 
 [node name="Bombs" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="Bomb" parent="Bombs" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 1112.95, 474.295 )
@@ -316,7 +334,6 @@ scale = Vector2( 2.74097, 2.4173 )
 
 [node name="Area2D" type="Area2D" parent="People" index="0"]
 
-editor/display_folded = true
 position = Vector2( 1809.2, 503.408 )
 scale = Vector2( 1.30099, 1.8583 )
 input_pickable = true
@@ -331,7 +348,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D" index="1"]
@@ -356,7 +373,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D2" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D2" index="1"]
@@ -381,7 +398,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D3" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D3" index="1"]
@@ -406,7 +423,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D4" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D4" index="1"]
@@ -431,7 +448,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D5" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D5" index="1"]
@@ -456,7 +473,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D6" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D6" index="1"]
