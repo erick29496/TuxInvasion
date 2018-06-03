@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/Panel.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/halloween-background-with-zombie-hand-bursting-out-of-the-ground_1048-6914.jpg" type="Texture" id=2]
@@ -11,6 +11,14 @@
 [ext_resource path="res://assets/Player/6.png" type="Texture" id=9]
 [ext_resource path="res://assets/Player/7.png" type="Texture" id=10]
 [ext_resource path="res://assets/Player/8.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/1.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/2.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/3.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/4.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/5.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/6.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/7.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140816Z-001/8.png" type="Texture" id=19]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -52,9 +60,17 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 20.0
+"speed": 12.0
 } ]
-_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
 
 [node name="HBoxContainer" type="HBoxContainer" index="0"]
 
@@ -155,16 +171,16 @@ position = Vector2( 156.566, 490.323 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 7
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
 
-position = Vector2( 1158, 509.85 )
-scale = Vector2( 0.784888, 0.823185 )
-frames = SubResource( 7 )
+position = Vector2( 1142.83, 496.374 )
+scale = Vector2( 1.53741, 1.65258 )
+frames = SubResource( 8 )
 animation = "default"
-frame = 7
+frame = 3
 playing = true
 
 

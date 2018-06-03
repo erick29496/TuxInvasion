@@ -57,6 +57,10 @@ func _process(delta):
 		firstZombie = self.get_children()[0]
 		if firstZombiePosition == null:
 			firstZombiePosition = self.get_children()[0].position
+		firstZombieIndex = 0
+		print(firstZombie)
+		print(firstZombiePosition)
+		print(firstZombieIndex)
 		
 	var index = 0
 	while (index < self.get_children().size()):
@@ -68,6 +72,9 @@ func _process(delta):
 				firstZombiePosition = i.position
 				firstZombie = i
 				firstZombieIndex = index
+				print(firstZombie)
+				print(firstZombiePosition)
+				print(firstZombieIndex)
 			zombiesCanJump.append(false)
 		if startJump:
 			if (!zombiesCanJump[index] && i.position >= firstZombiePosition):
