@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/410574__yummie__game-background-music-loop-short.ogg-9deb5f8b26c5b45e3a8de4e2bfa3bae4.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg"
+source_md5="1dc6959cf06c2edf0cada9f5b7946827"
+
+dest_files=[ "res://.import/410574__yummie__game-background-music-loop-short.ogg-9deb5f8b26c5b45e3a8de4e2bfa3bae4.oggstr" ]
+dest_md5="a37a0f0eb1b7b7b8f9956e97ea814583"
+
+[params]
+
+loop=true
+loop_offset=0

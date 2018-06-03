@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/Tileset.tres" type="TileSet" id=2]
@@ -22,6 +22,11 @@
 [ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg" type="AudioStream" id=24]
+[ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=25]
+[ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=26]
+[ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=27]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -498,6 +503,7 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -536,7 +542,6 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -572,6 +577,7 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -581,5 +587,35 @@ __meta__ = {
 
 script = ExtResource( 18 )
 maps = [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+
+pause_mode = 1
+stream = ExtResource( 23 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="ScreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
+
+pause_mode = 1
+stream = ExtResource( 24 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 25 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="CoinPlayer" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 27 )
 
 

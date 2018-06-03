@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/348310__redafs__zombie-monster-scream.ogg-0f097e2f9a1d8d890be60c6b7d2e6a8a.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg"
+source_md5="b41a7eef0b82bea3cda1c2ee4632e45f"
+
+dest_files=[ "res://.import/348310__redafs__zombie-monster-scream.ogg-0f097e2f9a1d8d890be60c6b7d2e6a8a.oggstr" ]
+dest_md5="53325a0fdced5742dc0e473499a9d0c7"
+
+[params]
+
+loop=true
+loop_offset=0

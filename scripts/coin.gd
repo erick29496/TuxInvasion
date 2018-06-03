@@ -19,6 +19,7 @@ extends Area2D
 
 func _on_Coin_body_entered(body):
 	get_parent().get_parent().get_node('CanvasLayer/PointsLabel')._add_points(50)
+	get_parent().get_parent().get_node('CoinPlayer').play()
 	$Anim.play("collect")
 	$Shape.queue_free()
 	yield(get_node("Anim"), "animation_finished")

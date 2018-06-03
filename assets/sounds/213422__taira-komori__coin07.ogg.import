@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/213422__taira-komori__coin07.ogg-476c068ce0b29ac665a4d0c060633105.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/213422__taira-komori__coin07.ogg"
+source_md5="7b9bac2b812ab11b2eb2aee5b88fc815"
+
+dest_files=[ "res://.import/213422__taira-komori__coin07.ogg-476c068ce0b29ac665a4d0c060633105.oggstr" ]
+dest_md5="92a8323dddd9a6996157310ea04def96"
+
+[params]
+
+loop=true
+loop_offset=0
