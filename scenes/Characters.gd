@@ -16,7 +16,6 @@
 
 extends Node2D
 
-var start = true
 var cont = 0
 var total_converted = -1
 var jump = false
@@ -29,28 +28,32 @@ var firstZombieIndex
 var startZombiesnumber = 1
 
 var revive = false
-var peopleGroup = false
 var duplicateZombies = false
 
 
 func _ready():
 	var contAux  = 0
+	if (duplicateZombies):
+		duplicateZombies = false
+		startZombiesnumber *= 2
 	while (contAux < startZombiesnumber):
 		_addCharacter()
 		contAux += 1
-	start = false
 	var bombs = get_parent().get_node('Bombs').get_children()
 	for bomb in bombs:
 		bomb.connect('remove_character', self, '_removeCharacter')
 
 func _process(delta):
 	if (cont == 0):
-		print ("finish")
-		var global = get_tree().get_root().get_node('/root/global')
-		var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
-		global.set_points(final_points)
-		global.set_converted(total_converted)
-		get_tree().change_scene('scenes/DeathScreen.tscn')
+		if revive:
+			_addCharacter()
+			revive = false
+		else:
+			var global = get_tree().get_root().get_node('/root/global')
+			var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
+			global.set_points(final_points)
+			global.set_converted(total_converted)
+			get_tree().change_scene('scenes/DeathScreen.tscn')
 		
 	if (!startJump && self.get_children().size() > 0 && self.get_children()[0].getJump()):
 		jump = true
@@ -102,9 +105,8 @@ func _addCharacter():
 		2: scene = load("res://scenes/Character3.tscn")
 	var scene_instance = scene.instance()
 	var pos = get_parent().get_node("Camera").get_camera_position()
-	if (!start): 
-		var aux = randi()%300-100
-		pos -= Vector2(aux, 70)
+	var aux = randi()%300-100
+	pos -= Vector2(aux, 70)
 	scene_instance.set_name("CharacterX")
 	scene_instance.set_position(pos)
 	add_child(scene_instance)

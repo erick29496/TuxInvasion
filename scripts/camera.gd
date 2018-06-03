@@ -32,6 +32,5 @@ func _process(delta):
 		futureTime = time + 5
 	self.position.x += WALK_SPEED * delta
 	if time >= futureTime:
-		print("camara change")
-		WALK_SPEED += 30
+		WALK_SPEED += 50
 		futureTime = 0

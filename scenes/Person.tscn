@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Area2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/People/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/People/2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25.1212, 51.325 )
+
+[sub_resource type="SpriteFrames" id=12]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.5
+} ]
+
+[node name="Area2D" type="Area2D"]
+
+editor/display_folded = true
+position = Vector2( 717.293, 519.398 )
+scale = Vector2( 1.30099, 1.8583 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -8.73413, -14.638 )
+shape = SubResource( 11 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="hud_heartFull" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( -7.75769, -15.3369 )
+scale = Vector2( 0.874428, 0.502379 )
+frames = SubResource( 12 )
+animation = "default"
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+

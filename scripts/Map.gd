@@ -26,20 +26,18 @@ func _spawn_first_map():
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer)
-	timer.set_wait_time(3)
+	timer.set_wait_time(2.5)
 	timer.start()
 	
 func _on_timer_timeout():
    _spawn_map()
 
 func _spawn_map():
-	print("new map")
 	var index
 	var new_map
-	index = rand_range(0, maps.size())
+	index = randi()%maps.size()
 	new_map = maps[index].instance()
 	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, -360)
-	print(pos)
 	new_map.set_position(pos)
 	add_child(new_map)
 	
