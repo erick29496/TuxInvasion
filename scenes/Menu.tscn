@@ -52,7 +52,7 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 20.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -155,7 +155,7 @@ position = Vector2( 156.566, 490.323 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 1
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
@@ -164,7 +164,7 @@ position = Vector2( 1158, 509.85 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 1
+frame = 7
 playing = true
 
 
