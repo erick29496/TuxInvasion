@@ -1,18 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://scenes/Button.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Panel.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/halloween-background-with-zombie-hand-bursting-out-of-the-ground_1048-6914.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/Button.gd" type="Script" id=3]
+[ext_resource path="res://assets/Player/1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player/2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player/3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/5.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/6.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/7.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/8.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="CanvasItemMaterial" id=1]
 
-font_path = "res://assets/fonts/Hanken-Book.ttf"
+render_priority = 0
+blend_mode = 0
+light_mode = 0
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="Theme" id=2]
 
-size = 100
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="DynamicFontData" id=3]
 
@@ -26,8 +34,31 @@ use_filter = false
 font_data = SubResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[sub_resource type="DynamicFontData" id=5]
 
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=7]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[node name="HBoxContainer" type="HBoxContainer" index="0"]
+
+material = SubResource( 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -41,7 +72,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Material" ]
+_sections_unfolded = [ "Material", "Rect", "Theme", "custom_constants" ]
 
 [node name="Panel" type="Panel" parent="." index="0"]
 
@@ -56,30 +87,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Material", "Pause", "Theme", "custom_styles" ]
 
-[node name="Label" type="Label" parent="Panel" index="0"]
+[node name="halloween-background-with-zombie-hand-bursting-out-of-the-ground_1048-6914" type="Sprite" parent="Panel" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 360.0
-margin_top = 197.0
-margin_right = 913.0
-margin_bottom = 296.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.322266, 0.859375, 0.381012, 1 )
-text = "Tux Invasion"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+position = Vector2( 638.741, 354.937 )
+scale = Vector2( 2.04181, 1.46728 )
+texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="Panel" index="1"]
 
@@ -106,7 +122,49 @@ group = null
 text = "PLAY"
 flat = false
 align = 1
-script = ExtResource( 1 )
-_sections_unfolded = [ "custom_fonts" ]
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 226.0
+margin_top = 133.0
+margin_right = 1058.0
+margin_bottom = 281.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.5, 1, 0.554687, 1 )
+text = "Tux Invasion"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Panel" index="3"]
+
+position = Vector2( 156.566, 490.323 )
+scale = Vector2( 0.784888, 0.823185 )
+frames = SubResource( 7 )
+animation = "default"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
+
+position = Vector2( 1158, 509.85 )
+scale = Vector2( 0.784888, 0.823185 )
+frames = SubResource( 7 )
+animation = "default"
+frame = 1
+playing = true
 
 
