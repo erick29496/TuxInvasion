@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/348310__redafs__zombie-monster-scream.wav-a6cf96e8b3d89a2b9f29853c1a6c8b40.sample"
+
+[deps]
+
+source_file="res://assets/sounds/348310__redafs__zombie-monster-scream.wav"
+source_md5="423d9314a196b3468690470cb20f6e69"
+
+dest_files=[ "res://.import/348310__redafs__zombie-monster-scream.wav-a6cf96e8b3d89a2b9f29853c1a6c8b40.sample" ]
+dest_md5="839b93f40f17069febddce9322eabc9d"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
