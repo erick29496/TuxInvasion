@@ -16,11 +16,31 @@
 
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export(Array) var maps
+
+const MIN_INTERVAL = 100
+const MAX_INTERVAL = 250
+const INITIAL_MAP_COUNT = 40
+
+var current_max_interval
+var current_min_interval
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	_spawn_first_map()
+	
+func _spawn_first_map():
 	pass
+	#for counter in range(INITIAL_MAP_COUNT):
+		#_spawn_map()
+	
+func _spawn_map():
+	var index
+	var new_map
+	
+	index = rand_range(0, maps.size())
+	new_map = maps[index].instance()
+	var pos = get_node("Camera").get_camera_position()
+	#new_map.set_position(pos)
+	add_child(new_map)
+	
+

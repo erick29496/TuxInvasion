@@ -30,6 +30,8 @@ var onair_time = 0 #
 var on_floor = false
 var jump = false
 var cont_jump = 0
+var velocityPlus = 0
+var canJump = false
 
 func _physics_process(delta):
 	
@@ -71,7 +73,7 @@ func _physics_process(delta):
 
 	var walk_speed = 300
 	if (get_parent() != null):
-	 	walk_speed = get_parent().get_parent().get_node('Camera').getSpeed()
+	 	walk_speed = get_parent().get_parent().get_node('Camera').getSpeed() + velocityPlus
 	target_speed *= walk_speed
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 	
@@ -81,7 +83,7 @@ func _physics_process(delta):
 	if on_floor and Input.is_action_pressed("jump"):
 		jump = true
 		
-	if jump:   
+	if jump && canJump:   
 		if Input.is_action_pressed("jump"):
 			cont_jump += JUMP_SPEED
 			linear_vel.y = -cont_jump
@@ -89,13 +91,27 @@ func _physics_process(delta):
 				JUMP_SPEED = 50
 			else:
 				jump = false
-				JUMP_SPEED = 300
+				canJump = false
+				JUMP_SPEED = 600
 				cont_jump = 0
 		else:
 			jump = false
-			JUMP_SPEED = 300
+			canJump = false
+			JUMP_SPEED = 600
 			cont_jump = 0
 	pass
+	
+func getVelocityPlus():
+	return velocityPlus
+	
+func setVelocityPlus(var aux):
+	velocityPlus = aux
+	
+func getJump():
+	return jump
+	
+func setCanJump(var aux):
+	canJump = aux
 
 func _on_Area2D_body_entered(body):
 	pass

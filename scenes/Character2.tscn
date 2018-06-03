@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/character.gd" type="Script" id=1]
-[ext_resource path="res://assets/Player2/1.png" type="Texture" id=2]
-[ext_resource path="res://assets/Player2/2.png" type="Texture" id=3]
-[ext_resource path="res://assets/Player2/3.png" type="Texture" id=4]
-[ext_resource path="res://assets/Player2/4.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player2/5.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player2/6.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player2/7.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player2/8.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/5.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/6.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/7.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player2/drive-download-20180603T140807Z-001/8.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 

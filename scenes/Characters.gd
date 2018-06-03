@@ -19,11 +19,24 @@ extends Node2D
 var start = false
 var cont = 0
 var total_converted = -1
+var jump = false
+var startJump = false
+var contJump = 0
+var firstZombie
+var firstZombiePosition = null
+
+var startZombiesx2 = false
+var startZombiesx3 = false
+var startZombiesx4 = false
+
+var revive = false
+var peopleGroup = false
+var duplicateZombies = false
+
 
 func _ready():
 	_addCharacter()
 	start = true
-	
 	var bombs = get_parent().get_node('Bombs').get_children()
 	for bomb in bombs:
 		bomb.connect('remove_character', self, '_removeCharacter')
@@ -35,9 +48,52 @@ func _process(delta):
 		global.set_points(final_points)
 		global.set_converted(total_converted)
 		get_tree().change_scene('scenes/DeathScreen.tscn')
-
+		
+	if (self.get_children().size() > 0 && self.get_children()[0].getJump()):
+		jump = true
+		firstZombie = self.get_children()[0]
+		if firstZombiePosition == null:
+			firstZombiePosition = self.get_children()[0].position
+		
+	var index = 0
+	while (index < self.get_children().size()):
+		var i = self.get_children()[index]
+		var currentPosition = get_parent().get_node("Camera").get_camera_position().x - i.position.x
+		if jump:
+			if (i.position < firstZombiePosition):
+				firstZombiePosition = i.position
+				firstZombie = i
+		if startJump:
+			if (i.position <= firstZombiePosition):
+				i.setCanJump(true)
+				contJump += 1
+		if currentPosition > 300:
+			i.setVelocityPlus(100)
+		else:
+			if (i.getVelocityPlus() != 0):
+				i.setVelocityPlus(0)
+		index += 1
+		
+	if jump:
+		startJump = true
+		firstZombie.setCanJump(true)
+		contJump += 1
+		jump = false
+		
+	if contJump == self.get_children().size():
+		startJump = false
+		contJump = 0
+		firstZombiePosition = null
+		
+	
+			
 func _addCharacter():
-	var scene = load("res://scenes/Character.tscn")
+	var rnd = randi()%3
+	var scene
+	match rnd:
+		0: scene = load("res://scenes/Character.tscn")
+		1: scene = load("res://scenes/Character2.tscn")
+		2: scene = load("res://scenes/Character3.tscn")
 	var scene_instance = scene.instance()
 	var pos = get_parent().get_node("Camera").get_camera_position()
 	if (start): 
@@ -58,3 +114,8 @@ func _removeCharacter(node):
 func _remove_last_character():
 	var last = get_children()[get_child_count() -1]
 	self._removeCharacter(last)
+	
+func getCharacters():
+	return self.get_children()
+	
+	
