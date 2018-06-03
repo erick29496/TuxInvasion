@@ -45,6 +45,7 @@ func _ready():
 
 func _process(delta):
 	if (cont == 0):
+		print ("finish")
 		var global = get_tree().get_root().get_node('/root/global')
 		var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
 		global.set_points(final_points)
