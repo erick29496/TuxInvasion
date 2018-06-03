@@ -85,7 +85,6 @@ extents = Vector2( 10, 10 )
 [node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-maps = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
