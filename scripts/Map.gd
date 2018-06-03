@@ -30,7 +30,8 @@ func _spawn_first_map():
 	timer.start()
 	
 func _on_timer_timeout():
-   _spawn_map()
+   #_spawn_map()
+	pass
 
 func _spawn_map():
 	print("new map")

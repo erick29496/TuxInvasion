@@ -20,7 +20,7 @@ const GRAVITY_VEC = Vector2(0, 2500)
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 25.0
 const MIN_ONAIR_TIME = 0.1
-const JUMP_SPEED = 600
+const JUMP_SPEED = 700
 const MAX_JUMP = 1000
 const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
@@ -32,6 +32,8 @@ var jump = false
 var cont_jump = 0
 var velocityPlus = 0
 var canJump = false
+
+var hasJumped = false
 
 func _physics_process(delta):
 	
@@ -84,20 +86,20 @@ func _physics_process(delta):
 		jump = true
 		
 	if jump && canJump:   
-		if Input.is_action_pressed("jump"):
-			cont_jump += JUMP_SPEED
-			linear_vel.y = -cont_jump
+		cont_jump += JUMP_SPEED
+		linear_vel.y = -cont_jump
+		if on_floor and Input.is_action_pressed("jump"):
 			if cont_jump < MAX_JUMP:
 				JUMP_SPEED = 50
 			else:
 				jump = false
 				canJump = false
-				JUMP_SPEED = 600
+				JUMP_SPEED = 700
 				cont_jump = 0
 		else:
 			jump = false
 			canJump = false
-			JUMP_SPEED = 600
+			JUMP_SPEED = 700
 			cont_jump = 0
 	pass
 	

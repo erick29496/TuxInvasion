@@ -23,9 +23,8 @@ var jump = false
 var startJump = false
 var contJump = 0
 var firstZombie
-var firstZombiePosition = null
+var firstZombiePosition
 var firstZombieIndex
-var zombiesCanJump = []
 
 var startZombiesnumber = 1
 
@@ -55,32 +54,27 @@ func _process(delta):
 	if (!startJump && self.get_children().size() > 0 && self.get_children()[0].getJump()):
 		jump = true
 		firstZombie = self.get_children()[0]
-		if firstZombiePosition == null:
-			firstZombiePosition = self.get_children()[0].position
+		firstZombiePosition = self.get_children()[0].position
 		firstZombieIndex = 0
-		print(firstZombie)
-		print(firstZombiePosition)
-		print(firstZombieIndex)
 		
 	var index = 0
+	var allZombiesJumped = true
 	while (index < self.get_children().size()):
 		var i = self.get_children()[index]
 		var currentPosition = get_parent().get_node("Camera").get_camera_position().x - i.position.x
 		if jump:
-			if (i.position > firstZombiePosition):
-				print ("first")
+			if (i.position >= firstZombiePosition):
 				firstZombiePosition = i.position
 				firstZombie = i
 				firstZombieIndex = index
-				print(firstZombie)
-				print(firstZombiePosition)
-				print(firstZombieIndex)
-			zombiesCanJump.append(false)
+			i.hasJumped = false
 		if startJump:
-			if (!zombiesCanJump[index] && i.position >= firstZombiePosition):
-				i.setCanJump(true)
-				zombiesCanJump[index] = true
-				contJump += 1
+			if (!i.hasJumped):
+				allZombiesJumped = false
+				if (i.position >= firstZombiePosition):
+					i.setCanJump(true)
+					i.hasJumped = true
+					contJump += 1
 		if currentPosition > 300:
 			i.setVelocityPlus(100)
 		else:
@@ -88,23 +82,15 @@ func _process(delta):
 				i.setVelocityPlus(0)
 		index += 1
 		
+	if (startJump && allZombiesJumped):
+		startJump = false
+		
 	if jump:
 		startJump = true
 		firstZombie.setCanJump(true)
 		contJump += 1
-		#zombiesCanJump[firstZombieIndex] = true
+		self.get_children()[firstZombieIndex].hasJumped = true
 		jump = false
-	
-	var j = 0
-	while (j < zombiesCanJump.size() - 1):
-		if (!zombiesCanJump[j]):
-			break
-		j += 1
-	
-	if (startJump && j == zombiesCanJump.size()):
-		startJump = false
-		firstZombiePosition = null
-		zombiesCanJump = []
 			
 func _addCharacter():
 	var rnd = randi()%3
@@ -116,7 +102,7 @@ func _addCharacter():
 	var scene_instance = scene.instance()
 	var pos = get_parent().get_node("Camera").get_camera_position()
 	if (!start): 
-		var aux = randi()%400-100
+		var aux = randi()%300-100
 		pos -= Vector2(aux, 70)
 	scene_instance.set_name("CharacterX")
 	scene_instance.set_position(pos)
@@ -136,5 +122,3 @@ func _remove_last_character():
 	
 func getCharacters():
 	return self.get_children()
-	
-	

@@ -22,9 +22,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 62.3311, 86.0974 )
+extents = Vector2( 39.1124, 86.0974 )
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" index="0"]
 
 position = Vector2( 93.3661, 335.415 )
 input_pickable = false
