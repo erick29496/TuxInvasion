@@ -34,5 +34,5 @@ func _physics_process(delta):
 	for body in bodies:
 		if (body.name.find('Character') > -1 && self._is_collision_valid):
 			get_parent().get_parent().get_node("Characters")._addCharacter()
-			get_parent().get_parent().get_node('Camera/PointsLabel')._add_points(100)
+			get_parent().get_parent().get_node('CanvasLayer/PointsLabel')._add_points(100)
 			queue_free()

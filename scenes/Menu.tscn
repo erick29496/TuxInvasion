@@ -56,7 +56,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="HBoxContainer" type="HBoxContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer"]
 
 material = SubResource( 1 )
 anchor_left = 0.0
@@ -155,7 +155,7 @@ position = Vector2( 156.566, 490.323 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 1
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
@@ -164,7 +164,7 @@ position = Vector2( 1158, 509.85 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 1
+frame = 7
 playing = true
 
 

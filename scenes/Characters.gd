@@ -44,7 +44,7 @@ func _ready():
 func _process(delta):
 	if (cont == 0):
 		var global = get_tree().get_root().get_node('/root/global')
-		var final_points = int(get_parent().get_node('Camera/PointsLabel').get_text())
+		var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
 		global.set_points(final_points)
 		global.set_converted(total_converted)
 		get_tree().change_scene('scenes/DeathScreen.tscn')
@@ -104,12 +104,12 @@ func _addCharacter():
 	add_child(scene_instance)
 	cont += 1;
 	total_converted += 1
-	get_parent().get_node('Camera/ZombiesLabel').set_text(str(cont))
+	get_parent().get_node('CanvasLayer/ZombiesLabel').set_text(str(cont))
 	
 func _removeCharacter(node):
 	remove_child(node)
 	cont -= 1
-	get_parent().get_node('Camera/ZombiesLabel').set_text(str(cont))
+	get_parent().get_node('CanvasLayer/ZombiesLabel').set_text(str(cont))
 	
 func _remove_last_character():
 	var last = get_children()[get_child_count() -1]
