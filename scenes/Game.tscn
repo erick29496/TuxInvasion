@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/Tileset.tres" type="TileSet" id=2]
@@ -11,7 +11,11 @@
 [ext_resource path="res://scenes/Characters.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Bomb.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Area2D.gd" type="Script" id=11]
-[ext_resource path="res://assets/hud_heartFull.png" type="Texture" id=12]
+[ext_resource path="res://assets/People/1.png" type="Texture" id=12]
+[ext_resource path="res://assets/People/2.png" type="Texture" id=13]
+[ext_resource path="res://assets/hud_heartFull.png" type="Texture" id=14]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=15]
+[ext_resource path="res://scenes/Map1.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -53,12 +57,20 @@ _sections_unfolded = [ "Font", "Settings" ]
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 32.7727, 50.1321 )
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-maps = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -315,8 +327,6 @@ scale = Vector2( 2.74097, 2.4173 )
 
 [node name="People" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="Area2D" type="Area2D" parent="People" index="0"]
 
 editor/display_folded = true
@@ -334,13 +344,19 @@ _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D" index="0"]
 
+position = Vector2( 18.4117, -15.7543 )
 shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="hud_heartFull" type="Sprite" parent="People/Area2D" index="1"]
+[node name="hud_heartFull" type="AnimatedSprite" parent="People/Area2D" index="1"]
 
-position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+position = Vector2( 18.1745, -15.9913 )
+scale = Vector2( 0.965811, 0.522052 )
+frames = SubResource( 8 )
+animation = "default"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area2D2" type="Area2D" parent="People" index="1"]
 
@@ -365,7 +381,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D2" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D3" type="Area2D" parent="People" index="2"]
 
@@ -390,7 +406,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D3" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D4" type="Area2D" parent="People" index="3"]
 
@@ -415,7 +431,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D4" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D5" type="Area2D" parent="People" index="4"]
 
@@ -440,7 +456,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D5" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D7" type="Area2D" parent="People" index="5"]
 
@@ -468,7 +484,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D7" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D8" type="Area2D" parent="People" index="6"]
 
@@ -496,7 +512,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D8" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D9" type="Area2D" parent="People" index="7"]
 
@@ -524,7 +540,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D9" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D10" type="Area2D" parent="People" index="8"]
 
@@ -552,7 +568,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D10" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D11" type="Area2D" parent="People" index="9"]
 
@@ -580,7 +596,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D11" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D12" type="Area2D" parent="People" index="10"]
 
@@ -608,7 +624,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D12" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D13" type="Area2D" parent="People" index="11"]
 
@@ -636,7 +652,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D13" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D14" type="Area2D" parent="People" index="12"]
 
@@ -664,7 +680,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D14" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D15" type="Area2D" parent="People" index="13"]
 
@@ -692,7 +708,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D15" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D16" type="Area2D" parent="People" index="14"]
 
@@ -720,7 +736,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D16" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D17" type="Area2D" parent="People" index="15"]
 
@@ -748,7 +764,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D17" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D18" type="Area2D" parent="People" index="16"]
 
@@ -776,7 +792,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D18" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D19" type="Area2D" parent="People" index="17"]
 
@@ -804,7 +820,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D19" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Area2D6" type="Area2D" parent="People" index="18"]
 
@@ -829,6 +845,11 @@ _sections_unfolded = [ "Transform" ]
 [node name="hud_heartFull" type="Sprite" parent="People/Area2D6" index="1"]
 
 position = Vector2( 0.834473, -0.772858 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
+
+[node name="Map" type="Node2D" parent="." index="7"]
+
+script = ExtResource( 15 )
+maps = [ ExtResource( 16 ) ]
 
 
