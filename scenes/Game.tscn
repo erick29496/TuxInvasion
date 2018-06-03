@@ -64,7 +64,7 @@ animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
-"speed": 0.8
+"speed": 1.5
 } ]
 
 [node name="Game" type="Node" index="0"]
@@ -356,6 +356,7 @@ position = Vector2( 18.1745, -15.9913 )
 scale = Vector2( 0.965811, 0.522052 )
 frames = SubResource( 8 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -363,7 +364,6 @@ __meta__ = {
 
 [node name="Area2D3" type="Area2D" parent="People" index="1"]
 
-editor/display_folded = true
 position = Vector2( 2889.82, 573.028 )
 scale = Vector2( 1.30099, 1.8583 )
 input_pickable = true
@@ -391,6 +391,7 @@ position = Vector2( 18.1745, -15.9913 )
 scale = Vector2( 0.965811, 0.522052 )
 frames = SubResource( 8 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -426,6 +427,7 @@ position = Vector2( 18.1745, -15.9913 )
 scale = Vector2( 0.965811, 0.522052 )
 frames = SubResource( 8 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
