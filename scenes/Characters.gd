@@ -32,9 +32,14 @@ var duplicateZombies = false
 
 
 func _ready():
+	var global = get_tree().get_root().get_node('/root/global')
+	startZombiesnumber = global.startZombiesnumber
+	revive = global.revive
+	duplicateZombies = global.duplicateZombies
 	var contAux  = 0
 	if (duplicateZombies):
 		duplicateZombies = false
+		global.duplicateZombies = duplicateZombies
 		startZombiesnumber *= 2
 	while (contAux < startZombiesnumber):
 		_addCharacter()
@@ -48,10 +53,12 @@ func _process(delta):
 		if revive:
 			_addCharacter()
 			revive = false
+			global.revive = revive
 		else:
 			var global = get_tree().get_root().get_node('/root/global')
 			var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
 			global.set_points(final_points)
+			global.totalPoints += final_points
 			global.set_converted(total_converted)
 			get_tree().change_scene('scenes/DeathScreen.tscn')
 		

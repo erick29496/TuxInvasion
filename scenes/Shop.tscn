@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scenes/ShopBackToMenu.gd" type="Script" id=1]
+[ext_resource path="res://scripts/shop.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ShopBackToMenu.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -13,6 +14,18 @@ use_mipmaps = false
 use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=9]
+
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 9 )
+_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
 
 [sub_resource type="DynamicFontData" id=3]
 
@@ -38,18 +51,6 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=9]
-
-font_path = "res://assets/fonts/Hanken-Book.ttf"
-
-[sub_resource type="DynamicFont" id=10]
-
-size = 50
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 9 )
-_sections_unfolded = [ "Font", "Settings" ]
-
 [sub_resource type="DynamicFontData" id=7]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
@@ -60,9 +61,9 @@ size = 50
 use_mipmaps = false
 use_filter = false
 font_data = SubResource( 7 )
-_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
+_sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -94,6 +95,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
 
 [node name="Label" type="Label" parent="Panel" index="0"]
@@ -122,7 +124,57 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="Panel" index="1"]
+[node name="Label8" type="Label" parent="Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_top = 58.0
+margin_right = 225.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "POINTS:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label10" type="Label" parent="Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 243.0
+margin_top = 59.0
+margin_right = 427.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "-"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="Panel" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -149,7 +201,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Label3" type="Label" parent="Panel" index="2"]
+[node name="Label3" type="Label" parent="Panel" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -175,7 +227,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Button" type="Button" parent="Panel" index="3"]
+[node name="Button" type="Button" parent="Panel" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -192,7 +244,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -200,31 +252,278 @@ group = null
 text = "BACK"
 flat = false
 align = 1
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label4" type="Label" parent="Panel" index="4"]
+[node name="Label4" type="Label" parent="Panel" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 179.0
-margin_top = 335.0
-margin_right = 520.0
-margin_bottom = 385.0
+margin_left = 103.0
+margin_top = 371.0
+margin_right = 392.0
+margin_bottom = 481.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "LOREM IPSUM"
+text = "DUPLICATE
+ZOMBIES"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label5" type="Label" parent="Panel" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 149.0
+margin_top = 555.0
+margin_right = 335.0
+margin_bottom = 612.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "REVIVE"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label6" type="Label" parent="Panel" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 723.0
+margin_top = 359.0
+margin_right = 1028.0
+margin_bottom = 409.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ZOMBIES X2"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label7" type="Label" parent="Panel" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 728.0
+margin_top = 478.0
+margin_right = 1029.0
+margin_bottom = 535.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ZOMBIES X3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Label9" type="Label" parent="Panel" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 723.0
+margin_top = 593.0
+margin_right = 1028.0
+margin_bottom = 643.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ZOMBIES X4"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Button2" type="Button" parent="Panel" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 427.0
+margin_top = 379.0
+margin_right = 595.0
+margin_bottom = 450.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "3000 P"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Button3" type="Button" parent="Panel" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 422.0
+margin_top = 544.0
+margin_right = 583.0
+margin_bottom = 615.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1500P"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Button4" type="Button" parent="Panel" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1078.0
+margin_top = 346.0
+margin_right = 1239.0
+margin_bottom = 417.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1000 P"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Button5" type="Button" parent="Panel" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1078.0
+margin_top = 466.0
+margin_right = 1239.0
+margin_bottom = 537.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "5000 P"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Button6" type="Button" parent="Panel" index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1078.0
+margin_top = 587.0
+margin_right = 1239.0
+margin_bottom = 658.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "9000 P"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="Panel/Button2" to="Panel" method="_on_Button2_pressed"]
+
+[connection signal="pressed" from="Panel/Button3" to="Panel" method="_on_Button3_pressed"]
+
+[connection signal="pressed" from="Panel/Button4" to="Panel" method="_on_Button4_pressed"]
+
+[connection signal="pressed" from="Panel/Button5" to="Panel" method="_on_Button5_pressed"]
+
+[connection signal="pressed" from="Panel/Button6" to="Panel" method="_on_Button6_pressed"]
 
 

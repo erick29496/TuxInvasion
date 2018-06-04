@@ -19,6 +19,13 @@ extends Node
 var points = 0
 var converted = 0
 
+var totalPoints = 0
+
+var startZombiesnumber = 1
+
+var revive = false
+var duplicateZombies = false
+
 func _ready():
 	pass
 	
