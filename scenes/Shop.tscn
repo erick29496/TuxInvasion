@@ -62,7 +62,7 @@ use_filter = false
 font_data = SubResource( 7 )
 _sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
