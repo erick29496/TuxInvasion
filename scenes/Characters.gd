@@ -41,7 +41,7 @@ func _ready():
 		contAux += 1
 	var bombs = get_parent().get_node('Bombs').get_children()
 	for bomb in bombs:
-		bomb.connect('remove_character', self, '_removeCharacter')
+		bomb.connect('remove_character', self, 'explosion')
 
 func _process(delta):
 	if (cont == 0):
@@ -114,6 +114,10 @@ func _addCharacter():
 	total_converted += 1
 	get_parent().get_node('CanvasLayer/ZombiesLabel').set_text(str(cont))
 	
+func explosion(node):
+	get_parent().get_node('BombPlayer').play()
+	_removeCharacter(node)
+
 func _removeCharacter(node):
 	remove_child(node)
 	cont -= 1

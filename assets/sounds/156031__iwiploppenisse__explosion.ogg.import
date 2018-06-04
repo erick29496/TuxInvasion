@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/156031__iwiploppenisse__explosion.ogg-25920a52f6485ef49cd62fc77c02608b.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/156031__iwiploppenisse__explosion.ogg"
+source_md5="7b951f4f9e165f308f288541452600d3"
+
+dest_files=[ "res://.import/156031__iwiploppenisse__explosion.ogg-25920a52f6485ef49cd62fc77c02608b.oggstr" ]
+dest_md5="d331c63aaf121fcbc9d5ee03b1fde0af"
+
+[params]
+
+loop=true
+loop_offset=0

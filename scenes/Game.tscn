@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/Tileset.tres" type="TileSet" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=25]
 [ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=26]
 [ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=27]
+[ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=28]
+[ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=29]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -617,5 +619,14 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 script = ExtResource( 27 )
+
+[node name="BombPlayer" type="AudioStreamPlayer" parent="." index="12"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 29 )
 
 
