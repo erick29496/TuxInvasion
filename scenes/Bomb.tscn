@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/Tiles/boxExplosive.png" type="Texture" id=1]
+[ext_resource path="res://assets/inferior_bomb.png" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.75564, 1.66195 ), Vector2( 0.0886535, 0.0718998 ) ]
+"values": [ Vector2( 0.132157, 0.135807 ), Vector2( 1.75564, 1.66195 ), Vector2( 0.0886535, 0.0718998 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:modulate")
@@ -67,7 +67,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 34.8653
+radius = 38.1643
 
 [node name="Bomb" type="Area2D"]
 
@@ -84,6 +84,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -0.0367744, 0.49878 )
+scale = Vector2( 0.132157, 0.135807 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
@@ -100,6 +102,8 @@ blend_times = [  ]
 
 [node name="Shape" type="CollisionShape2D" parent="." index="2"]
 
+position = Vector2( -0.711624, -0.328026 )
+scale = Vector2( 1, 1.03372 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]

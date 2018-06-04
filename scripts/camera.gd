@@ -34,3 +34,4 @@ func _process(delta):
 	if time >= futureTime:
 		WALK_SPEED += 50
 		futureTime = 0
+		print (WALK_SPEED)

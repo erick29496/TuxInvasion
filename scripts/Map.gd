@@ -18,26 +18,46 @@ extends Node2D
 
 export(Array) var maps
 var timer
+var getPos = false
+var distance
+var startCreate = false
+var cont = 0
+var firstMap = true
 
 func _ready():
-	_spawn_first_map()
+	getPos = true
 	
-func _spawn_first_map():
-	timer = Timer.new()
-	timer.connect("timeout",self,"_on_timer_timeout") 
-	add_child(timer)
-	timer.set_wait_time(2.5)
-	timer.start()
+func _process(delta):
+	if getPos:
+		distance = get_parent().get_node("Camera").get_camera_position() + Vector2(1250, 0)
+		getPos = false
+		startCreate = true
+	if startCreate:
+		if get_parent().get_node("Camera").get_camera_position() >= distance:
+			_spawn_map()
+			if cont == 5:
+				cont = 0
+				remove_child(self.get_children()[0])
+			getPos = true
 	
-func _on_timer_timeout():
-   _spawn_map()
-
 func _spawn_map():
+	cont += 1
 	var index
 	var new_map
-	index = randi()%maps.size()
+	if (firstMap): 
+		index = 0
+		firstMap = false
+	else: 
+		if get_parent().get_node("Camera").WALK_SPEED <= 550:
+			index = randi()%3
+		elif get_parent().get_node("Camera").WALK_SPEED <= 850:
+			index = randi()%5
+		elif get_parent().get_node("Camera").WALK_SPEED <= 1000:
+			index = randi()%7
+		else:
+			index = randi()%maps.size()
 	new_map = maps[index].instance()
-	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, -360)
+	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(1000, -360)
 	new_map.set_position(pos)
 	add_child(new_map)
 	
