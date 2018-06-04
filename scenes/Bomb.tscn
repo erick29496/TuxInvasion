@@ -9,7 +9,7 @@ script/source = "extends Area2D
 signal remove_character(character)
 
 func _on_Bomb_body_entered(body):
-	emit_signal('remove_character', body)
+	get_parent().get_parent().get_node('Characters').explosion(body)
 	$Anim.play(\"explote\")
 	$Shape.queue_free()
 	yield(get_node(\"Anim\"), \"animation_finished\")
