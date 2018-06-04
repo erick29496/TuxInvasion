@@ -1,38 +1,39 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Bomb.tscn" type="PackedScene" id=2]
-[ext_resource path="res://tilesets/Tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://assets/Tiles/cloud3.png" type="Texture" id=4]
-[ext_resource path="res://assets/Tiles/cloud1.png" type="Texture" id=5]
-[ext_resource path="res://assets/Tiles/cloud2.png" type="Texture" id=6]
-[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=8]
-[ext_resource path="res://scenes/ResumeBtn.gd" type="Script" id=9]
-[ext_resource path="res://assets/img/pause-2.png" type="Texture" id=10]
-[ext_resource path="res://scenes/PointsLabel.gd" type="Script" id=11]
-[ext_resource path="res://scenes/TextureButton.gd" type="Script" id=12]
-[ext_resource path="res://scenes/Characters.gd" type="Script" id=13]
-[ext_resource path="res://scenes/Person.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/Area2D.gd" type="Script" id=15]
-[ext_resource path="res://assets/People/1.png" type="Texture" id=16]
-[ext_resource path="res://assets/People/2.png" type="Texture" id=17]
-[ext_resource path="res://scripts/Map.gd" type="Script" id=18]
-[ext_resource path="res://scenes/Map1.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/Map6.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/Map5.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/Map7.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/Map8.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg" type="AudioStream" id=27]
-[ext_resource path="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg" type="AudioStream" id=28]
-[ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=29]
-[ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=30]
-[ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=31]
-[ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=32]
-[ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=33]
+[ext_resource path="res://scripts/objects.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Person.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tilesets/Tileset2.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/Tiles/cloud1.png" type="Texture" id=7]
+[ext_resource path="res://assets/Tiles/cloud3.png" type="Texture" id=8]
+[ext_resource path="res://assets/Tiles/cloud2.png" type="Texture" id=9]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=10]
+[ext_resource path="res://scenes/ResumeBtn.gd" type="Script" id=11]
+[ext_resource path="res://assets/img/pause-2.png" type="Texture" id=12]
+[ext_resource path="res://scenes/PointsLabel.gd" type="Script" id=13]
+[ext_resource path="res://scenes/TextureButton.gd" type="Script" id=14]
+[ext_resource path="res://scenes/Characters.gd" type="Script" id=15]
+[ext_resource path="res://scenes/Area2D.gd" type="Script" id=16]
+[ext_resource path="res://assets/People/1.png" type="Texture" id=17]
+[ext_resource path="res://assets/People/2.png" type="Texture" id=18]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=19]
+[ext_resource path="res://scenes/Map1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/Map6.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/Map5.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/Map7.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/Map8.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg" type="AudioStream" id=29]
+[ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=30]
+[ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=31]
+[ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=32]
+[ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=33]
+[ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=34]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -103,7 +104,7 @@ extents = Vector2( 25.1212, 51.325 )
 [sub_resource type="SpriteFrames" id=12]
 
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.5
@@ -115,23 +116,25 @@ script = ExtResource( 1 )
 
 [node name="Bombs" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Bomb2" parent="Bombs" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 1066.17, 510.609 )
-scale = Vector2( 2.52793, 2.22885 )
+position = Vector2( 1112.25, 545.995 )
+scale = Vector2( 1.08779, 1.12303 )
 
 [node name="Objects" type="Node2D" parent="." index="1"]
+
+script = ExtResource( 3 )
+objects = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ) ]
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 
 position = Vector2( -106.91, 5.46701 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 70, 70 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -146,7 +149,7 @@ collision_layer = 2
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65535, 3, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, 327679, 3, 0, 393215, 3, 0, 458751, 3, 0, 524287, 3, 0, 589823, 3, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 655359, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589848, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0, 589852, 3, 0, 589853, 3, 0, 589854, 3, 0, 589855, 3, 0, 589856, 3, 0, 589857, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 786431, 3, 0, 720896, 3, 0, 720897, 3, 0, 720898, 3, 0, 720899, 3, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 3, 0, 720908, 3, 0, 720909, 3, 0, 720910, 3, 0, 720911, 3, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 3, 0, 720916, 3, 0, 720917, 3, 0, 720918, 3, 0, 720919, 3, 0, 720920, 3, 0, 720921, 3, 0, 720922, 3, 0, 720923, 3, 0, 720924, 3, 0, 720925, 3, 0, 720926, 3, 0, 720927, 3, 0, 720928, 3, 0, 720929, 3, 0 )
+tile_data = PoolIntArray( 65535, 3, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, 327679, 3, 0, 393215, 3, 0, 458751, 3, 0, 524287, 3, 0, 589823, 3, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 655359, 3, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 1, 0, 589857, 1, 0, 720895, 3, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 655390, 1, 0, 655391, 1, 0, 655392, 1, 0, 655393, 1, 0, 786431, 3, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 1, 0 )
 _sections_unfolded = [ "Collision", "Material", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -154,7 +157,6 @@ __meta__ = {
 
 [node name="Parallax" type="ParallaxBackground" parent="." index="3"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -167,66 +169,59 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
 
-[node name="Layer" type="ParallaxLayer" parent="Parallax" index="0"]
-
-motion_scale = Vector2( 0.5, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion", "Pause" ]
-
-[node name="Sprite3" type="Sprite" parent="Parallax/Layer" index="0"]
-
-position = Vector2( 909.428, 116.761 )
-scale = Vector2( 1.64572, 1.52209 )
-texture = ExtResource( 4 )
-
-[node name="Sprite4" type="Sprite" parent="Parallax/Layer" index="1"]
-
-position = Vector2( 1012.14, 205.599 )
-scale = Vector2( 1.42588, 1.12576 )
-texture = ExtResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="Parallax/Layer" index="2"]
+[node name="Sprite" type="Sprite" parent="Parallax" index="0"]
 
 position = Vector2( 153.884, 77.3661 )
 scale = Vector2( 1.64572, 1.52209 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
-[node name="Sprite2" type="Sprite" parent="Parallax/Layer" index="3"]
+[node name="Sprite4" type="Sprite" parent="Parallax" index="1"]
+
+position = Vector2( 1012.14, 205.599 )
+scale = Vector2( 1.42588, 1.12576 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="Parallax" index="2"]
+
+position = Vector2( 909.428, 116.761 )
+scale = Vector2( 1.64572, 1.52209 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="Parallax" index="3"]
 
 position = Vector2( 453.625, 193.63 )
 scale = Vector2( 1.29485, 1.14558 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="Coins" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
+[node name="Coin" parent="Coins" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 496.587, 500.882 )
 
-[node name="Coin5" parent="Coins" index="1" instance=ExtResource( 7 )]
+[node name="Coin5" parent="Coins" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 688.41, 366.181 )
 
-[node name="Coin6" parent="Coins" index="2" instance=ExtResource( 7 )]
+[node name="Coin6" parent="Coins" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 557.931, 374.333 )
 
-[node name="Coin7" parent="Coins" index="3" instance=ExtResource( 7 )]
+[node name="Coin7" parent="Coins" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 232.37, 513.953 )
 
-[node name="Coin4" parent="Coins" index="4" instance=ExtResource( 7 )]
+[node name="Coin4" parent="Coins" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 887.571, 407.701 )
 
-[node name="Coin2" parent="Coins" index="5" instance=ExtResource( 7 )]
+[node name="Coin2" parent="Coins" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 427.72, 500.882 )
 
-[node name="Coin3" parent="Coins" index="6" instance=ExtResource( 7 )]
+[node name="Coin3" parent="Coins" index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 352.086, 500.162 )
 
@@ -255,7 +250,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Limit", "Smoothing", "Transform" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
@@ -336,7 +331,7 @@ group = null
 text = "RESUME"
 flat = false
 align = 1
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label" type="Label" parent="CanvasLayer" index="1"]
@@ -368,7 +363,7 @@ _sections_unfolded = [ "Material", "Theme", "Visibility", "custom_colors", "cust
 
 position = Vector2( 1155.63, 76.8163 )
 scale = Vector2( 0.355821, 0.323781 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label2" type="Label" parent="CanvasLayer" index="3"]
 
@@ -416,7 +411,7 @@ text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="ZombiesLabel" type="Label" parent="CanvasLayer" index="5"]
@@ -464,12 +459,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="Characters" type="Node2D" parent="." index="7"]
 
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -481,7 +476,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" parent="People" index="0" instance=ExtResource( 14 )]
+[node name="Area2D" parent="People" index="0" instance=ExtResource( 5 )]
 
 [node name="Area2D5" type="Area2D" parent="People" index="1"]
 
@@ -495,7 +490,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Material" ]
 __meta__ = {
 "_edit_group_": true
@@ -516,6 +511,7 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -533,7 +529,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Material" ]
 __meta__ = {
 "_edit_group_": true
@@ -554,7 +550,6 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -572,7 +567,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Material" ]
 __meta__ = {
 "_edit_group_": true
@@ -590,6 +585,7 @@ position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
 frames = SubResource( 12 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -597,13 +593,13 @@ __meta__ = {
 
 [node name="Map" type="Node2D" parent="." index="9"]
 
-script = ExtResource( 18 )
-maps = [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+script = ExtResource( 19 )
+maps = [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
 pause_mode = 1
-stream = ExtResource( 27 )
+stream = ExtResource( 28 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
@@ -613,30 +609,30 @@ _sections_unfolded = [ "Pause" ]
 [node name="ScreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 
 pause_mode = 1
-stream = ExtResource( 28 )
+stream = ExtResource( 29 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 29 )
+script = ExtResource( 30 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="CoinPlayer" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 30 )
+stream = ExtResource( 31 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 31 )
+script = ExtResource( 32 )
 
 [node name="BombPlayer" type="AudioStreamPlayer" parent="." index="13"]
 
-stream = ExtResource( 32 )
+stream = ExtResource( 33 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 33 )
+script = ExtResource( 34 )
 
 

@@ -67,7 +67,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 38.1643
+radius = 80.5445
 
 [node name="Bomb" type="Area2D"]
 
@@ -84,8 +84,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -0.0367744, 0.49878 )
-scale = Vector2( 0.132157, 0.135807 )
+position = Vector2( -0.0990058, -0.42451 )
+scale = Vector2( 0.291072, 0.265874 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
@@ -102,8 +102,8 @@ blend_times = [  ]
 
 [node name="Shape" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -0.711624, -0.328026 )
-scale = Vector2( 1, 1.03372 )
+position = Vector2( -1.77912, -0.577241 )
+scale = Vector2( 1.06036, 1.02562 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]

@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/People/1.png" type="Texture" id=2]
 [ext_resource path="res://assets/People/2.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 25.1212, 51.325 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -18,10 +18,10 @@ animations = [ {
 "speed": 1.5
 } ]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" index="0"]
 
 editor/display_folded = true
-position = Vector2( 717.293, 519.398 )
+position = Vector2( 11.0686, 20.0327 )
 scale = Vector2( 1.30099, 1.8583 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -39,7 +39,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( -8.73413, -14.638 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -49,8 +49,9 @@ __meta__ = {
 
 position = Vector2( -7.75769, -15.3369 )
 scale = Vector2( 0.874428, 0.502379 )
-frames = SubResource( 12 )
+frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

@@ -70,7 +70,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 radius = 42.8423
 
-[node name="Coin" type="Area2D" index="0"]
+[node name="Coin" type="Area2D"]
 
 position = Vector2( -0.995667, 1.05607 )
 scale = Vector2( 1.46274, 1.46512 )
