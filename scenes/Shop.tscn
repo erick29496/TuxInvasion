@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -12,7 +12,43 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[sub_resource type="DynamicFontData" id=3]
+
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=5]
+
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=7]
+
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 7 )
+_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
+
+[node name="HBoxContainer" type="HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -35,6 +71,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_right = 1280.0
 margin_bottom = 722.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -42,6 +79,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
 
 [node name="Label" type="Label" parent="Panel" index="0"]
 
@@ -78,15 +116,15 @@ anchor_bottom = 0.0
 margin_left = 91.0
 margin_top = 179.0
 margin_right = 472.0
-margin_bottom = 271.0
+margin_bottom = 278.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.322266, 0.859375, 0.381012, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Objects"
 align = 1
 valign = 1
@@ -112,8 +150,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.322266, 0.859375, 0.381012, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Improvements"
 align = 1
 valign = 1
@@ -143,5 +181,29 @@ shortcut = null
 group = null
 flat = false
 align = 1
+
+[node name="Label4" type="Label" parent="Panel" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 179.0
+margin_top = 335.0
+margin_right = 520.0
+margin_bottom = 385.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "LOREM IPSUM"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 
