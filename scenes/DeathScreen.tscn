@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Label4.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Label5.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Button.gd" type="Script" id=3]
+[ext_resource path="res://scenes/HighscoreDSLabel.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -38,6 +39,18 @@ size = 50
 use_mipmaps = false
 use_filter = false
 font_data = SubResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=7]
+
+font_path = "res://assets/fonts/Hanken-Book.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Panel" type="Panel"]
@@ -78,39 +91,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 682.0
-margin_top = 288.0
-margin_right = 1102.0
-margin_bottom = 368.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
-text = "POINTS"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Label4" type="Label" parent="." index="2"]
+[node name="Label4" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 498.0
-margin_top = 282.0
+margin_top = 250.0
 margin_right = 918.0
-margin_bottom = 362.0
+margin_bottom = 330.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -125,16 +115,16 @@ max_lines_visible = -1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Label5" type="Label" parent="." index="3"]
+[node name="Label5" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 500.0
-margin_top = 363.0
+margin_top = 331.0
 margin_right = 920.0
-margin_bottom = 443.0
+margin_bottom = 411.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -149,16 +139,16 @@ max_lines_visible = -1
 script = ExtResource( 2 )
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label3" type="Label" parent="." index="4"]
+[node name="Label3" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 684.0
-margin_top = 367.0
+margin_top = 335.0
 margin_right = 1118.0
-margin_bottom = 447.0
+margin_bottom = 415.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -172,16 +162,39 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="Label2" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 684.0
+margin_top = 256.0
+margin_right = 1104.0
+margin_bottom = 336.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "POINTS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="Button" type="Button" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 356.0
-margin_top = 475.0
-margin_right = 963.0
-margin_bottom = 585.0
+margin_left = 354.0
+margin_top = 534.0
+margin_right = 961.0
+margin_bottom = 644.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -198,6 +211,31 @@ text = "PLAY AGAIN"
 flat = false
 align = 1
 script = ExtResource( 3 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="HighscoreDSLabel" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 362.0
+margin_top = 432.0
+margin_right = 955.0
+margin_bottom = 482.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "HIGHSCORE"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 4 )
 _sections_unfolded = [ "custom_fonts" ]
 
 
