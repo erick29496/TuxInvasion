@@ -39,9 +39,12 @@ func _spawn_object():
 	if (index == 0):
 		pos.y = 600
 	elif index == 2:
-		if get_parent().get_node("Characters").get_children()[0].onair_time == 0:
-			pos.y = get_parent().get_node("Characters").get_children()[0].position.y
-		else:
+		pos.y = 0
+		for tux in get_parent().get_node("Characters").get_children():
+			if tux.onair_time == 0:
+				pos.y = tux.position.y
+				break
+		if pos.y == 0:
 			index = 1
 			new_object = objects[index].instance()
 	elif (index == 3):
