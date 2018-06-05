@@ -38,7 +38,7 @@ func _spawn_object():
 	if (index == 0):
 		pos += Vector2(0, 60)
 	if (index == 3):
-		pos -= Vector2(0, 100)
+		pos.y = 200
 	new_object.set_position(pos)
 	add_child(new_object)
 	

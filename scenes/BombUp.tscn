@@ -69,7 +69,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 radius = 78.1021
 
-[node name="Bomb" type="Area2D" index="0"]
+[node name="Bomb" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

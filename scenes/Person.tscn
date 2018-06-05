@@ -18,12 +18,13 @@ animations = [ {
 "speed": 1.5
 } ]
 
-[node name="Area2D" type="Area2D" index="0"]
+[node name="Area2D" type="Area2D"]
 
 editor/display_folded = true
 position = Vector2( 11.0686, 20.0327 )
 scale = Vector2( 1.30099, 1.8583 )
 input_pickable = true
+gravity_point = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
