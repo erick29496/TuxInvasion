@@ -100,7 +100,7 @@ use_filter = false
 font_data = SubResource( 11 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" index="0"]
 
 material = SubResource( 1 )
 anchor_left = 0.0
@@ -147,9 +147,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 247.0
-margin_top = 482.0
-margin_right = 893.0
+margin_left = 274.0
+margin_top = 485.0
+margin_right = 822.0
 margin_bottom = 621.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -199,6 +199,7 @@ position = Vector2( 156.566, 490.323 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
@@ -207,7 +208,7 @@ position = Vector2( 1141.82, 494.383 )
 scale = Vector2( 1.56462, 1.6338 )
 frames = SubResource( 8 )
 animation = "default"
-frame = 2
+frame = 4
 playing = true
 
 [node name="Label2" type="Label" parent="Panel" index="5"]
@@ -242,9 +243,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 910.0
-margin_top = 483.0
-margin_right = 1088.0
+margin_left = 837.0
+margin_top = 485.0
+margin_right = 1022.0
 margin_bottom = 621.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

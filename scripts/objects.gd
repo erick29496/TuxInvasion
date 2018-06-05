@@ -23,7 +23,7 @@ func _ready():
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout")
 	add_child(timer)
-	timer.set_wait_time(2)
+	timer.set_wait_time(3)
 	timer.start()
 	
 func _on_timer_timeout():
@@ -37,9 +37,10 @@ func _spawn_object():
 	new_object = objects[index].instance()
 	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, 0)
 	if (index == 0):
-		print(index)
 		pos.y = 600
-	if (index == 3):
+	elif (index == 1):
+		pos.y = randi()%300+100
+	elif (index == 3):
 		pos.y = 200
 	new_object.set_position(pos)
 	add_child(new_object)
