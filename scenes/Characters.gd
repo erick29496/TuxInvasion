@@ -24,7 +24,7 @@ var contJump = 0
 var firstZombie
 var firstZombiePosition
 var firstZombieIndex
-
+var totalPoints
 var startZombiesnumber = 1
 
 var revive = false
@@ -32,14 +32,15 @@ var duplicateZombies = false
 
 
 func _ready():
-	var global = get_tree().get_root().get_node('/root/global')
-	startZombiesnumber = global.startZombiesnumber
-	revive = global.revive
-	duplicateZombies = global.duplicateZombies
+	var userData = _read_user_data()
+	totalPoints = userData[0]
+	startZombiesnumber = int(userData[3])
+	revive = userData[2].to_lower() == 'true'
+	duplicateZombies = userData[1].to_lower() == 'true'
 	var contAux  = 0
 	if (duplicateZombies):
 		duplicateZombies = false
-		global.duplicateZombies = duplicateZombies
+		_save_user_data()
 		startZombiesnumber *= 2
 	while (contAux < startZombiesnumber):
 		_addCharacter()
@@ -53,12 +54,14 @@ func _process(delta):
 		if revive:
 			_addCharacter()
 			revive = false
-			global.revive = revive
+			_save_user_data()
 		else:
 			var global = get_tree().get_root().get_node('/root/global')
 			var final_points = int(get_parent().get_node('CanvasLayer/PointsLabel').get_text())
 			global.set_points(final_points)
-			global.totalPoints += final_points
+			totalPoints = str(int(totalPoints) + final_points)
+			_save_user_data()
+			global.totalPoints = int(totalPoints)
 			global.set_converted(total_converted)
 			get_tree().change_scene('scenes/DeathScreen.tscn')
 		
@@ -136,3 +139,22 @@ func _remove_last_character():
 	
 func getCharacters():
 	return self.get_children()
+	
+func _read_user_data():
+	var file = File.new()
+	file.open('res://persistance/user.dat', file.READ)
+	var content = file.get_as_text()
+	file.close()
+	var result = ['0','false','false','1']
+	if content.length() > 0:
+		return content.split(',')
+	else:
+		return result
+
+func _save_user_data():
+	var file = File.new()
+	file.open('res://persistance/user.dat', file.WRITE)
+	var content = totalPoints+','+str(duplicateZombies)+','+str(revive)+','+str(startZombiesnumber)
+	file.store_string(content)
+	file.close()
+	return content
