@@ -199,7 +199,7 @@ position = Vector2( 156.566, 490.323 )
 scale = Vector2( 0.784888, 0.823185 )
 frames = SubResource( 7 )
 animation = "default"
-frame = 7
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Panel" index="4"]
@@ -208,7 +208,7 @@ position = Vector2( 1141.82, 494.383 )
 scale = Vector2( 1.56462, 1.6338 )
 frames = SubResource( 8 )
 animation = "default"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Label2" type="Label" parent="Panel" index="5"]

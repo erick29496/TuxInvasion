@@ -35,6 +35,10 @@ func _spawn_object():
 	index = randi()%objects.size()
 	new_object = objects[index].instance()
 	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, 0)
+	if (index == 0):
+		pos += Vector2(0, 60)
+	if (index == 3):
+		pos -= Vector2(0, 100)
 	new_object.set_position(pos)
 	add_child(new_object)
 	

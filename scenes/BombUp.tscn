@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/inferior_bomb.png" type="Texture" id=1]
+[ext_resource path="res://assets/superior_bomb.png" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 
@@ -84,8 +84,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0.50504, -0.491973 )
-scale = Vector2( 0.232047, 0.241441 )
+position = Vector2( -1.00498, 0.64122 )
+scale = Vector2( 0.22287, 0.218032 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
@@ -102,8 +102,8 @@ blend_times = [  ]
 
 [node name="Shape" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -2.48452, -1.98677 )
-scale = Vector2( 0.804815, 0.835534 )
+position = Vector2( -1.38662, 21.7356 )
+scale = Vector2( 0.804815, 0.81378 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]

@@ -20,8 +20,8 @@ const GRAVITY_VEC = Vector2(0, 2500)
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 25.0
 const MIN_ONAIR_TIME = 0.1
-const JUMP_SPEED = 600
-const MAX_JUMP = 1000
+const JUMP_SPEED = 800
+const MAX_JUMP = 1200
 
 var linear_vel = Vector2()
 var onair_time = 0 #
@@ -92,12 +92,12 @@ func _physics_process(delta):
 			else:
 				jump = false
 				canJump = false
-				JUMP_SPEED = 600
+				JUMP_SPEED = 800
 				cont_jump = 0
 		else:
 			jump = false
 			canJump = false
-			JUMP_SPEED = 600
+			JUMP_SPEED = 800
 			cont_jump = 0
 	pass
 	
