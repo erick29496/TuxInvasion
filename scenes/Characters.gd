@@ -65,7 +65,7 @@ func _process(delta):
 			global.set_converted(total_converted)
 			get_tree().change_scene('scenes/DeathScreen.tscn')
 		
-	if (self.get_children().size() > 0 && self.get_children()[0].getJump() && !startJump):
+	if (self.get_children().size() > 0 && self.get_children()[0].getJump()):# && !startJump):
 		jump = true
 		firstZombie = self.get_children()[0]
 		firstZombiePosition = self.get_children()[0].position

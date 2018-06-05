@@ -23,7 +23,7 @@ func _ready():
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout")
 	add_child(timer)
-	timer.set_wait_time(3)
+	timer.set_wait_time(1)
 	timer.start()
 	
 func _on_timer_timeout():
@@ -33,16 +33,36 @@ func _on_timer_timeout():
 func _spawn_object():
 	var index
 	var new_object
-	index = randi()%objects.size()
+	index = 1#randi()%objects.size()
 	new_object = objects[index].instance()
 	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, 0)
 	if (index == 0):
 		pos.y = 600
-	elif (index == 1):
-		pos.y = randi()%300+100
+	elif index == 2:
+		if get_parent().get_node("Characters").get_children()[0].onair_time == 0:
+			pos.y = get_parent().get_node("Characters").get_children()[0].position.y
+		else:
+			index = 1
+			new_object = objects[index].instance()
 	elif (index == 3):
 		pos.y = 200
+	if (index == 1):
+		pos.y = randi()%200+200
 	new_object.set_position(pos)
 	add_child(new_object)
-	
+	if (randi()%4 == 0):
+		new_object = objects[index].instance()
+		pos += Vector2(130, 0)
+		new_object.set_position(pos)
+		add_child(new_object)
+		if (randi()%2 == 0):
+			if index == 0:
+				if get_parent().get_node("Camera").WALK_SPEED >= 900:
+					new_object = objects[index].instance()
+					new_object.set_position(pos + Vector2(130, 0))
+					add_child(new_object)
+			else:
+				new_object = objects[index].instance()
+				new_object.set_position(pos + Vector2(130, 0))
+				add_child(new_object)
 

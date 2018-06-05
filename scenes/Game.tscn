@@ -186,14 +186,14 @@ blend_times = [  ]
 
 [node name="Sprite6" type="Sprite" parent="Parallax/AnimBack" index="0"]
 
-position = Vector2( -649, 422.247 )
+position = Vector2( 650.382, 422.247 )
 scale = Vector2( 1.54423, 1.65925 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite7" type="Sprite" parent="Parallax/AnimBack" index="1"]
 
-position = Vector2( 650.382, 422.241 )
+position = Vector2( 1950.62, 422.241 )
 scale = Vector2( 1.54423, 1.65925 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
@@ -308,6 +308,7 @@ _sections_unfolded = [ "Limit", "Smoothing", "Transform" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
