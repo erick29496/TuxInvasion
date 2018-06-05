@@ -27,7 +27,8 @@ func _ready():
 	timer.start()
 	
 func _on_timer_timeout():
-	_spawn_object()
+	if get_parent().get_node("Camera").WALK_SPEED >= 400:
+		_spawn_object()
 	
 func _spawn_object():
 	var index
@@ -36,7 +37,8 @@ func _spawn_object():
 	new_object = objects[index].instance()
 	var pos = get_parent().get_node("Camera").get_camera_position() + Vector2(700, 0)
 	if (index == 0):
-		pos += Vector2(0, 60)
+		print(index)
+		pos.y = 600
 	if (index == 3):
 		pos.y = 200
 	new_object.set_position(pos)

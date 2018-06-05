@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/objects.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Bomb.tscn" type="PackedScene" id=2]
@@ -14,25 +14,22 @@
 [ext_resource path="res://scenes/PointsLabel.gd" type="Script" id=12]
 [ext_resource path="res://scenes/TextureButton.gd" type="Script" id=13]
 [ext_resource path="res://scenes/Characters.gd" type="Script" id=14]
-[ext_resource path="res://scenes/Area2D.gd" type="Script" id=15]
-[ext_resource path="res://assets/People/1.png" type="Texture" id=16]
-[ext_resource path="res://assets/People/2.png" type="Texture" id=17]
-[ext_resource path="res://scripts/Map.gd" type="Script" id=18]
-[ext_resource path="res://scenes/Map1.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/Map6.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/Map5.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/Map7.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/Map8.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg" type="AudioStream" id=27]
-[ext_resource path="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg" type="AudioStream" id=28]
-[ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=29]
-[ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=30]
-[ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=31]
-[ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=32]
-[ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=33]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=15]
+[ext_resource path="res://scenes/Map1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/Map6.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/Map5.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/Map7.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/Map8.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/sounds/410574__yummie__game-background-music-loop-short.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/348310__redafs__zombie-monster-scream.ogg" type="AudioStream" id=25]
+[ext_resource path="res://scenes/ScreamPlayer.gd" type="Script" id=26]
+[ext_resource path="res://assets/sounds/213422__taira-komori__coin07.ogg" type="AudioStream" id=27]
+[ext_resource path="res://scenes/CoinPlayer.gd" type="Script" id=28]
+[ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=29]
+[ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=30]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -94,20 +91,6 @@ use_mipmaps = false
 use_filter = false
 font_data = SubResource( 9 )
 _sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="RectangleShape2D" id=11]
-
-custom_solver_bias = 0.0
-extents = Vector2( 25.1212, 51.325 )
-
-[sub_resource type="SpriteFrames" id=12]
-
-animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "default",
-"speed": 1.5
-} ]
 
 [node name="Game" type="Node" index="0"]
 
@@ -175,35 +158,81 @@ texture = ExtResource( 8 )
 
 [node name="Coins" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 496.587, 500.882 )
+position = Vector2( 594.143, 490.746 )
 
 [node name="Coin5" parent="Coins" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 688.41, 366.181 )
+position = Vector2( 737.821, 204.01 )
 
 [node name="Coin6" parent="Coins" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 557.931, 374.333 )
+position = Vector2( 601.008, 204.56 )
 
 [node name="Coin7" parent="Coins" index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 232.37, 513.953 )
+position = Vector2( 939.334, 344.18 )
 
-[node name="Coin4" parent="Coins" index="4" instance=ExtResource( 3 )]
+[node name="Coin8" parent="Coins" index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 887.571, 407.701 )
+position = Vector2( 1000.15, 487.347 )
 
-[node name="Coin2" parent="Coins" index="5" instance=ExtResource( 3 )]
+[node name="Coin9" parent="Coins" index="5" instance=ExtResource( 3 )]
 
-position = Vector2( 427.72, 500.882 )
+position = Vector2( 1145.85, 489.881 )
 
-[node name="Coin3" parent="Coins" index="6" instance=ExtResource( 3 )]
+[node name="Coin12" parent="Coins" index="6" instance=ExtResource( 3 )]
 
-position = Vector2( 352.086, 500.162 )
+position = Vector2( 1420.78, 491.148 )
+
+[node name="Coin13" parent="Coins" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 1518.34, 406.261 )
+
+[node name="Coin14" parent="Coins" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 1632.36, 308.705 )
+
+[node name="Coin20" parent="Coins" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 1525.94, 309.972 )
+
+[node name="Coin21" parent="Coins" index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 1619.69, 402.46 )
+
+[node name="Coin19" parent="Coins" index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 1726.12, 218.751 )
+
+[node name="Coin15" parent="Coins" index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 1432.18, 217.484 )
+
+[node name="Coin16" parent="Coins" index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 1719.78, 489.881 )
+
+[node name="Coin10" parent="Coins" index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 1215.53, 353.049 )
+
+[node name="Coin11" parent="Coins" index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 1216.8, 211.149 )
+
+[node name="Coin4" parent="Coins" index="16" instance=ExtResource( 3 )]
+
+position = Vector2( 597.437, 348.154 )
+
+[node name="Coin2" parent="Coins" index="17" instance=ExtResource( 3 )]
+
+position = Vector2( 942.106, 203.146 )
+
+[node name="Coin3" parent="Coins" index="18" instance=ExtResource( 3 )]
+
+position = Vector2( 463.579, 203.693 )
 
 [node name="Camera" type="Camera2D" parent="." index="5"]
 
@@ -451,136 +480,23 @@ __meta__ = {
 
 [node name="People" type="Node2D" parent="." index="8"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Area2D" parent="People" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 576.39, 507.622 )
-
-[node name="Area2D5" type="Area2D" parent="People" index="1"]
-
-editor/display_folded = true
-position = Vector2( 759.184, 510.997 )
-scale = Vector2( 1.30099, 1.8583 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 15 )
-_sections_unfolded = [ "Material" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D5" index="0"]
-
-position = Vector2( -8.73413, -14.638 )
-shape = SubResource( 11 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="hud_heartFull" type="AnimatedSprite" parent="People/Area2D5" index="1"]
-
-position = Vector2( -7.75769, -15.3369 )
-scale = Vector2( 0.874428, 0.502379 )
-frames = SubResource( 12 )
-animation = "default"
-playing = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D6" type="Area2D" parent="People" index="2"]
-
-editor/display_folded = true
-position = Vector2( 656.568, 505.421 )
-scale = Vector2( 1.30099, 1.8583 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 15 )
-_sections_unfolded = [ "Material" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D6" index="0"]
-
-position = Vector2( -8.73413, -14.638 )
-shape = SubResource( 11 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="hud_heartFull" type="AnimatedSprite" parent="People/Area2D6" index="1"]
-
-position = Vector2( -7.75769, -15.3369 )
-scale = Vector2( 0.874428, 0.502379 )
-frames = SubResource( 12 )
-animation = "default"
-frame = 1
-playing = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D2" type="Area2D" parent="People" index="3"]
-
-editor/display_folded = true
-position = Vector2( 669.315, 497.967 )
-scale = Vector2( 1.30099, 1.8583 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 15 )
-_sections_unfolded = [ "Material" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="People/Area2D2" index="0"]
-
-position = Vector2( -8.73413, -14.638 )
-shape = SubResource( 11 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="hud_heartFull" type="AnimatedSprite" parent="People/Area2D2" index="1"]
-
-position = Vector2( -7.75769, -15.3369 )
-scale = Vector2( 0.874428, 0.502379 )
-frames = SubResource( 12 )
-animation = "default"
-playing = true
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 2112.55, 502.891 )
 
 [node name="Map" type="Node2D" parent="." index="9"]
 
-script = ExtResource( 18 )
-maps = [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+script = ExtResource( 15 )
+maps = [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
 pause_mode = 1
-stream = ExtResource( 27 )
+stream = ExtResource( 24 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
@@ -590,30 +506,30 @@ _sections_unfolded = [ "Pause" ]
 [node name="ScreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 
 pause_mode = 1
-stream = ExtResource( 28 )
+stream = ExtResource( 25 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 29 )
+script = ExtResource( 26 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="CoinPlayer" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 30 )
+stream = ExtResource( 27 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 31 )
+script = ExtResource( 28 )
 
 [node name="BombPlayer" type="AudioStreamPlayer" parent="." index="13"]
 
-stream = ExtResource( 32 )
+stream = ExtResource( 29 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 33 )
+script = ExtResource( 30 )
 
 
