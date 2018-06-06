@@ -30,7 +30,7 @@
 [ext_resource path="res://assets/sounds/156031__iwiploppenisse__explosion.ogg" type="AudioStream" id=28]
 [ext_resource path="res://scenes/BombPlayer.gd" type="Script" id=29]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=1]
 
 resource_name = "back"
 length = 10.0
@@ -61,65 +61,65 @@ tracks/1/keys = {
 "values": [ Vector2( 1950.62, 422.241 ), Vector2( 650.382, 422.241 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=2]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 80
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 1 )
+font_data = SubResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=4]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 
 size = 40
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 3 )
+font_data = SubResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=6]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 5 )
+font_data = SubResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=8]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 7 )
+font_data = SubResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=9]
+[sub_resource type="DynamicFontData" id=10]
 
 font_path = "res://assets/fonts/Hanken-Book.ttf"
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 9 )
+font_data = SubResource( 10 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Game" type="Node" index="0"]
@@ -181,7 +181,7 @@ autoplay = "back"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/back = SubResource( 11 )
+anims/back = SubResource( 1 )
 blend_times = [  ]
 
 [node name="Sprite6" type="Sprite" parent="Parallax/AnimBack" index="0"]
@@ -352,7 +352,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Game paused"
 percent_visible = 1.0
 lines_skipped = 0
@@ -376,7 +376,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -403,7 +403,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Points:"
 autowrap = true
@@ -434,7 +434,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Alive zombies:"
 percent_visible = 1.0
@@ -458,7 +458,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 percent_visible = 1.0
@@ -483,7 +483,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 percent_visible = 1.0
